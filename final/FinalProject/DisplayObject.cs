@@ -13,28 +13,6 @@ public class DisplayObject
     //     End.Y = Start.Y;
     // }
 
-    public class Point
-    {
-        private int _x, _y;
-        public Point(int x, int y)
-        {
-            _x = x;
-            _y = y;
-        }
-
-        public int X
-        {
-            get { return _x; }
-            set => _x = Math.Clamp(value, 0, Console.WindowWidth);
-        }
-        public int Y
-        {
-            get { return _y; }
-            set => _y = Math.Clamp(value, 0, Console.BufferHeight);
-        }
-    }
-
-
     public virtual void Draw(){}
     public virtual int Fill(char fillChar = ' ')
     {
@@ -44,15 +22,14 @@ public class DisplayObject
             Console.SetCursorPosition(Start.X, i);
             Console.Write(s);
         }
-        End.Y = Start.Y;
         return End.Y;
     }
 
-    protected int Width
+    public int Width
     {
         get { return End.X - Start.X; }
     }
-    protected int Height
+    public int Height
     {
         get { return End.Y - Start.Y; }
     }

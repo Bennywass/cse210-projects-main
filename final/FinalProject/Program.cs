@@ -4,15 +4,23 @@ class Program
 {
     static void Main(string[] args)
     {
-        DisplayObject d = new DisplayObject();
+        Console.SetWindowSize(40,40);
 
-        d.Start = new DisplayObject.Point(0, 0);
-        d.End = new DisplayObject.Point(10, 10);
+        Format format = new Format(ConsoleColor.Red, ConsoleColor.Cyan);
 
-
-        DisplayObject grid = new Grid(12, 12);
+        Grid grid = new Grid(24, 24, format);
+        TurnTracker tt = new(grid.getCellSize());
 
         grid.Draw();
+        
+        do
+        {
+            grid.select(tt.Next());
+        }
+        while(!grid.checkWinner());
+
+        Console.SetCursorPosition(0, grid.End.Y + 2);
+        Console.WriteLine("Good Job, winner! Press any key to end.");
 
         Console.Read();
     }
