@@ -1,0 +1,31 @@
+Parent class: Excersize
+Starting message
+Common ending
+Pause animation
+Grab amount of seconds from user
+
+
+
+Child classes: 
+
+Reflection:
+Message of Reflection
+Give random prompt to user to ask them to Reflect
+Show random questions until user duration ends
+
+
+breathing:
+
+Message of breathing
+breath in, breath out things
+pause and show a countdown
+continute until reaches number user specified
+
+
+listening:
+
+Message for listening
+Give user a random prompt
+Countdown for several seconds
+User lists items until user defined countdown ends
+Displays items user listed
